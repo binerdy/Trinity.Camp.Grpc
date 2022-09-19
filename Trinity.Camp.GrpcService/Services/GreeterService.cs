@@ -1,22 +1,14 @@
-using Grpc.Core;
-using Trinity.Camp.GrpcService;
+﻿using Grpc.Core;
 
-namespace Trinity.Camp.GrpcService.Services
+namespace Trinity.Camp.GrpcService.Services;
+
+public class GreeterService : Greeter.GreeterBase
 {
-    public class GreeterService : Greeter.GreeterBase
+    public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
     {
-        private readonly ILogger<GreeterService> _logger;
-        public GreeterService(ILogger<GreeterService> logger)
+        return Task.FromResult(new HelloReply
         {
-            _logger = logger;
-        }
-
-        public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
-        {
-            return Task.FromResult(new HelloReply
-            {
-                Message = "Hello " + request.Name
-            });
-        }
+            Message = "Hello " + request.Name
+        });
     }
 }
