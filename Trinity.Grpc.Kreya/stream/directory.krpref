@@ -3,7 +3,7 @@
     {
       "options": {
         "grpc": {
-          "endpoint": "https://localhost:7121"
+          "endpoint": "https://localhost:7255/grpc/grpc-web-service"
         }
       }
     }
