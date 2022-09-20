@@ -1,0 +1,12 @@
+{
+  "details": {
+    "methodFqn": "stream.StreamService.FetchResponse"
+  },
+  "requests": [
+    {
+      "location": "FetchResponse-request.json"
+    }
+  ],
+  "operationType": "serverStreaming",
+  "invokerName": "grpc"
+}

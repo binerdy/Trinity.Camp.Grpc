@@ -1,3 +1,4 @@
+
 using Trinity.Camp.GrpcService.Services;
 
 namespace Trinity.Camp.GrpcService
@@ -18,7 +19,7 @@ namespace Trinity.Camp.GrpcService
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            app.MapGrpcService<GreeterService>();
+            app.MapGrpcService<StreamService>();
             app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 
             if (app.Environment.IsDevelopment())

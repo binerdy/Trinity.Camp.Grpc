@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "Trinity.Camp.Proto";
+
+package stream;
+
+service StreamService {
+  rpc FetchResponse (StreamRequest) returns (stream StreamResponse) {}
+}
+
+message StreamRequest {
+  int32 id = 1;
+}
+
+message StreamResponse {
+  string result = 1;
+}

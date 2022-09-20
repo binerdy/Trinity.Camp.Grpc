@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-	<Protobuf Include="..\Trinity.Camp.Proto\greet.proto" GrpcServices="Server">
-		<Link>Proto\greet.proto</Link>
+	<Protobuf Include="..\Trinity.Camp.Proto\stream.proto" GrpcServices="Server">
+		<Link>Proto\stream.proto</Link>
 	</Protobuf>
   </ItemGroup>
 
