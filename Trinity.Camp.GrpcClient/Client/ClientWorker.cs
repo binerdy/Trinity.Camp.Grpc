@@ -16,7 +16,7 @@ internal class ClientWorker
         _configuration = configuration;
     }
 
-    public async Task Run()
+    public async Task RunAsync()
     {
         var proxyUrl = _configuration.GetSection("ProxyUrl").Value;
         var gatewayPrefix = _configuration.GetSection("GatewayPrefix").Value;
@@ -28,12 +28,13 @@ internal class ClientWorker
         });
 
         var client = new StreamServiceClient(channel);
-        var asyncServerCall = client.FetchResponse(new StreamRequest { Id = 21 });
+        var asyncServerCall = client.FetchResponse(new StreamRequest { Symbol = "ADABTC" });
 
         while (await asyncServerCall.ResponseStream.MoveNext())
         {
             var response = asyncServerCall.ResponseStream.Current;
-            Console.WriteLine(response.Result);
+            Console.WriteLine($"{response.Symbol} - {response.Price}");
+            Thread.Sleep(2000);
         }
     }
 }

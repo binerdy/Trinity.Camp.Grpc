@@ -9,9 +9,10 @@ service StreamService {
 }
 
 message StreamRequest {
-  int32 id = 1;
+  string symbol = 1;
 }
 
 message StreamResponse {
-  string result = 1;
+    string symbol = 1;
+    string price = 2;
 }

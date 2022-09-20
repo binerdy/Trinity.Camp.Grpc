@@ -10,4 +10,4 @@ var host = Host
     .Build();
 
 var clientWorker = host.Services.GetRequiredService<ClientWorker>();
-await clientWorker.Run();
+await clientWorker.RunAsync();
